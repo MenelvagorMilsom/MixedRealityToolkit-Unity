@@ -1,0 +1,39 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "**/*.sln", "Assets/MixedRealityToolkit/*.cs", "Assets/MixedRealityToolkit/**/*.cs" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "Assets/MixedRealityToolkit"
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "**/*.yml" ],
+        "src": "obj/api",
+        "dest": "api"
+      },
+      {
+        "files": [ "Documentation/**/*.md", "*.md", "toc.yml", "restapi/**" ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [ "External/**"]
+      }
+    ],
+    "overwrite": "specs/*.md",
+    "globalMetadata": {
+      "_appTitle": "Mixed Reality Toolkit Documentation",
+      "_enableSearch": true
+    },
+    "markdownEngineName": "markdig",
+    "dest": "doc",
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
+  }
+}
