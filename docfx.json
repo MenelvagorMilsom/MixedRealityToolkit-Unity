@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": [ "**/*.sln", "Assets/MixedRealityToolkit/*.cs", "Assets/MixedRealityToolkit/**/*.cs" ],
+          "files": [ "**/*.sln", "**/*.cs" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "Assets/MixedRealityToolkit"
         }
@@ -19,7 +19,7 @@
         "dest": "api"
       },
       {
-        "files": [ "Documentation/**/*.md", "*.md", "toc.yml", "restapi/**" ]
+        "files": [ "Documentation/**/*.md", "*.md", "toc.yml"]
       }
     ],
     "resource": [
