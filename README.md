@@ -3,6 +3,8 @@
 # What is MixedRealityToolkit-vNext
 The V1 Mixed Reality Toolkit is a collection of scripts and components intended to accelerate development of applications targeting Microsoft HoloLens and Windows Mixed Reality headsets.
 
+### For details on the different branches used in the Mixed Reality Toolkit repositories, check this [Branch Guide here](https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki/Branch-Guide).
+
 This new version of the MixedRealityToolkit aims to further extend the capabilities of the toolkit and also introduce new features, including the capability to support more VR/AR/XR platforms beyond Microsoft's own Mixed Reality setup.
 
 The vNext branch is taking all the best lessons learned from the original Mixed Reality Toolkit and refactoring / restructuring it to both:
@@ -33,9 +35,20 @@ The Mixed Reality Toolkit vNext will includes many APIs to accelerate the develo
 | To develop apps for mixed reality headsets, you need the Windows 10 Fall Creators Update | The Unity 3D engine provides support for building mixed reality projects in Windows 10 | Visual Studio is used for code editing, deploying and building UWP app packages | The Emulators allow you test your app without the device in a simulated environment |
 
 # Getting started with MRTK-vNext
-MRTK-vNext is currently under heavy development, utilizing the current state of the [Dev_Working_Branch](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/Dev_Working_Branch) as a starting point. Refer to this branch for working examples and experimental code.
+MRTK-vNext is currently under heavy development. To determine the best branch for starting out, please view the [Branch Guide](https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki/Branch-Guide) wiki page.
 
-> Learn more about the approach behind the [Windows Mixed Reality - vNext SDK](/MRTK-SDK.md) here.  Which aims to help on-board developers quicker when building solutions.
+The Mixed Reality team have prepared a few guides for getting up to speed on using the new Mixed Reality Toolkit, which can be found here:
+
+* [Downloading the Mixed Reality Toolkit](/Documentation/DownloadingTheMRTK.md)
+* [Getting Started with the Mixed Reality Toolkit](/Documentation/GettingStartedWithTheMRTK.md)
+* [Mixed Reality Toolkit configuration guide](/Documentation/MixedRealityConfigurationGuide.md)
+
+More guides to follow.
+
+
+> Any queries, questions or feedback on using the Mixed Reality Toolkit should be [raised as Issues](https://github.com/Microsoft/MixedRealityToolkit-Unity/issues) on the site.  let us know what you like / dislike or think is incredibly awesome!
+> 
+> Alternatively, reach out to us on the [HoloDevelopers slack channels](https://holodevelopersslack.azurewebsites.net/)
 
 
 # Examples and QuickStart scenes
@@ -61,35 +74,5 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 | :--------------------- | :----------------- | :------------------ | :------------------------ |
 | See code examples. Do a coding tutorial. Watch guest lectures.          | Get design guides. Build user interface. Learn interactions and input.     | Get development guides. Learn the technology. Understand the science.       | Join open source projects. Ask questions on forums. Attend events and meetups. |
 
-# Building the Artifacts
-
-## Requirements
-
-### NuGet
-[NuGet](https://www.nuget.org/downloads) is the package manager for .Net and you'll need to have it available in the PATH.
-
-### UnitySetup
-The build process leverages [UnitySetup](https://www.powershellgallery.com/packages/UnitySetup), an OSS PowerShell Module from Microsoft. 
-
-Install from PowerShell:
-
-```powershell
-Install-Module UnitySetup -Scope CurrentUser
-```
-
-### Git
-If you do not specify a version, then [Git](https://git-scm.com/downloads) is used to find relevant tags. In this case it will need to be available in the PATH.
-
-## Run the Build
-Simply execute the build script as such:
-
-```powershell
-.\build.ps1 -Version '1.2.3'
-```
-For help and examples simply use the PowerShell help command:
-```
-help .\build.ps1 -Detailed
-```
-
-> Note: If you don't specify `-Version <version>` the script will try to infer it from tags pointing to the current git commit. An error is produced if you don't have a tag and no version is provided.
-| See code examples. Do a coding tutorial. Watch guest lectures.          | Get design guides. Build user interface. Learn interactions and input.     | Get development guides. Learn the technology. Understand the science.       | Join open source projects. Ask questions on forums. Attend events and meet-ups. |
+# How to Contribute
+View the [**How To Contribute**](https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki/How-to-Contribute) wiki page for the most up to date instructions on contributing to the Mixed Reality Toolkit!
