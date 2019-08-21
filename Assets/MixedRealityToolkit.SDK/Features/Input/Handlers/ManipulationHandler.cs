@@ -197,7 +197,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
         };
 
         private State currentState = State.Start;
-        private TwoHandMoveLogic moveLogic;
+        private ManipulationMoveLogic moveLogic;
         private TwoHandScaleLogic scaleLogic;
         private TwoHandRotateLogic rotateLogic;
         /// <summary>
@@ -250,7 +250,7 @@ namespace Microsoft.MixedReality.Toolkit.UI
 
         private void Awake()
         {
-            moveLogic = new TwoHandMoveLogic();
+            moveLogic = new ManipulationMoveLogic();
             rotateLogic = new TwoHandRotateLogic();
             scaleLogic = new TwoHandScaleLogic();
         }

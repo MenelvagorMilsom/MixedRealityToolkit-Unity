@@ -8,15 +8,15 @@ using UnityEngine;
 namespace Microsoft.MixedReality.Toolkit.Physics
 {
     /// <summary>
-    /// Implements a movement logic that uses the model of angular rotations along a sphere whose 
-    /// radius varies. The angle to move by is computed by looking at how much the hand changes
-    /// relative to a pivot point (slightly below and in front of the head).
+    /// Implements a move logic that will move an object based on the initial position of 
+    /// the grab point relative to the pointer and relative to the object, and subsequent
+    /// changes to the pointer and the object's rotation
     /// 
     /// Usage:
     /// When a manipulation starts, call Setup.
     /// Call Update any time to update the move logic and get a new rotation for the object.
     /// </summary>
-    public class TwoHandMoveLogic
+    public class ManipulationMoveLogic
     {
         private float pointerRefDistance;
 
@@ -46,7 +46,7 @@ namespace Microsoft.MixedReality.Toolkit.Physics
         }
 
         /// <summary>
-        /// Update the rotation based on input.
+        /// Update the position based on input.
         /// </summary>
         /// <param name="pointerCentroidPose"></param>
         /// <param name="objectRotation"></param>
