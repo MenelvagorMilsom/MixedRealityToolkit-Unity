@@ -186,7 +186,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHandedOnly;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded;
             manipHandler.OneHandRotationModeNear = ManipulationHandler.RotateInOneHandType.MaintainRotationToUser;
 
             // add near interaction grabbable to be able to grab the cube with the simulated articulated hand
@@ -307,7 +307,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHandedOnly;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded;
 
             // add near interaction grabbable to be able to grab the cube with the simulated articulated hand
             testObject.AddComponent<NearInteractionGrabbable>();
@@ -401,7 +401,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHandedOnly;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded;
 
             // add near interaction grabbable to be able to grab the cube with the simulated articulated hand
             testObject.AddComponent<NearInteractionGrabbable>();
@@ -505,7 +505,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHandedOnly;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded;
             manipHandler.OneHandRotationModeFar = ManipulationHandler.RotateInOneHandType.RotateAboutGrabPoint;
             manipHandler.ReleaseBehavior = 0;
             manipHandler.AllowFarManipulation = false;
@@ -685,7 +685,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneAndTwoHanded;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded | ManipulationHandler.HandMovementType.TwoHanded;
 
             // add near interaction grabbable to be able to grab the cube with the simulated articulated hand
             testObject.AddComponent<NearInteractionGrabbable>();
@@ -755,7 +755,7 @@ namespace Microsoft.MixedReality.Toolkit.Tests
             var manipHandler = testObject.AddComponent<ManipulationHandler>();
             manipHandler.HostTransform = testObject.transform;
             manipHandler.SmoothingActive = false;
-            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneAndTwoHanded;
+            manipHandler.ManipulationType = ManipulationHandler.HandMovementType.OneHanded | ManipulationHandler.HandMovementType.TwoHanded;
 
             var scaleHandler = testObject.EnsureComponent<TransformScaleHandler>();
             scaleHandler.ScaleMinimum = minScale;
