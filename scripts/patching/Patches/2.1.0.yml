@@ -1,0 +1,36 @@
+--- # Patch for moving min/max scaling from BoundingBox to TransformScaleHandler
+versions:
+  from: 2.0.0
+  to: 2.1.0
+components:
+  BoundingBox: 23f9be7a3cb53794ead8b55e784b65aa
+  TransformScaleHandler: 820f94d57893bf843a0cd6d93313fe6d
+actions:
+  addField: []
+  deleteField:
+    - component: BoundingBox
+      name: scaleMinimum
+    - component: BoundingBox    
+      name: scaleMaximum
+  renameField: []
+  modifyField: []
+  addComponent:
+    - conditions:
+        has: [BoundingBox]
+        doesNotHave: [TransformScaleHandler]
+      component:
+        type: TransformScaleHandler
+        unityFields: {}
+        componentFields:
+          - name: targetTransform
+            value: '{{{ MonoBehaviour<BoundingBox>::targetObject::Transform }}}'
+            default: {fileID: 0}
+          - name: scaleMinimum
+            value: '{{{ MonoBehaviour<BoundingBox>::scaleMinimum }}}'
+            default: 0.2
+          - name: scaleMaximum
+            value: '{{{ MonoBehaviour<BoundingBox>::scaleMaximum }}}'
+            default: 2
+          - name: relativeToInitialState
+            value: 1
+  deleteComponent: []
