@@ -219,51 +219,6 @@ namespace Microsoft.MixedReality.Toolkit.UI
             }
         }
 
-        [SerializeField]
-        [Obsolete("Use a TransformScaleHandler script rather than setting minimum on BoundingBox directly", false)]
-        [Tooltip("Minimum scaling allowed relative to the initial size")]
-        private float scaleMinimum = 0.2f;
-
-        [SerializeField]
-        [Obsolete("Use a TransformScaleHandler script rather than setting maximum on BoundingBox directly")]
-        [Tooltip("Maximum scaling allowed relative to the initial size")]
-        private float scaleMaximum = 2.0f;
-
-
-        /// <summary>
-        /// Public property for the scale minimum, in the target's local scale.
-        /// Set this value with SetScaleLimits.
-        /// </summary>
-        [Obsolete("Use a TransformScaleHandler.ScaleMinimum as it is the authoritative value for min scale")]
-        public float ScaleMinimum
-        {
-            get
-            {
-                if (scaleHandler != null)
-                {
-                    return scaleHandler.ScaleMinimum;
-                }
-                return 0.0f;
-            }
-        }
-
-        /// <summary>
-        /// Public property for the scale maximum, in the target's local scale.
-        /// Set this value with SetScaleLimits.
-        /// </summary>
-        [Obsolete("Use a TransformScaleHandler.ScaleMinimum as it is the authoritative value for max scale")]
-        public float ScaleMaximum
-        {
-            get
-            {
-                if (scaleHandler != null)
-                {
-                    return scaleHandler.ScaleMaximum;
-                }
-                return 0.0f;
-            }
-        }
-
         [Header("Box Display")]
         [SerializeField]
         [Tooltip("Flatten bounds in the specified axis or flatten the smallest one if 'auto' is selected")]
@@ -1109,19 +1064,6 @@ namespace Microsoft.MixedReality.Toolkit.UI
         }
 
         /// <summary>
-        /// Sets the minimum/maximum scale for the bounding box at runtime.
-        /// </summary>
-        /// <param name="min">Minimum scale</param>
-        /// <param name="max">Maximum scale</param>
-        /// <param name="relativeToInitialState">If true the values will be multiplied by scale of target at startup. If false they will be in absolute local scale.</param>
-        [Obsolete("Use a TransformScaleHandler script rather than setting min/max scale on BoundingBox directly")]
-        public void SetScaleLimits(float min, float max, bool relativeToInitialState = true)
-        {
-            scaleMinimum = min;
-            scaleMaximum = max;
-        }
-
-        /// <summary>
         /// Destroys and re-creates the rig around the bounding box
         /// </summary>
         public void CreateRig()
@@ -1908,16 +1850,6 @@ namespace Microsoft.MixedReality.Toolkit.UI
                 isChildOfTarget = transform.IsChildOf(target.transform);
 
                 scaleHandler = GetComponent<TransformScaleHandler>();
-                if (scaleHandler == null)
-                {
-                    scaleHandler = gameObject.AddComponent<TransformScaleHandler>();
-
-                    scaleHandler.TargetTransform = Target.transform;
-                #pragma warning disable 0618
-                    scaleHandler.ScaleMinimum = scaleMinimum;
-                    scaleHandler.ScaleMaximum = scaleMaximum;
-                #pragma warning restore 0618
-                }
             }
         }
 
