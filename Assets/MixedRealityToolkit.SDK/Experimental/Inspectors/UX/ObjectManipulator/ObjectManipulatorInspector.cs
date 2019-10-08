@@ -24,9 +24,6 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.Editor
 
         private SerializedProperty releaseBehavior;
 
-        private SerializedProperty constraintOnRotation;
-        private SerializedProperty constraintOnMovement;
-
         private SerializedProperty smoothingActive;
         private SerializedProperty moveLerpTime;
         private SerializedProperty rotateLerpTime;
@@ -40,7 +37,6 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.Editor
         bool oneHandedFoldout = true;
         bool twoHandedFoldout = true;
         bool physicsFoldout = true;
-        bool constraintsFoldout = true;
         bool smoothingFoldout = true;
         bool eventsFoldout = true;
 
@@ -60,10 +56,6 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.Editor
 
             // Physics
             releaseBehavior = serializedObject.FindProperty("releaseBehavior");
-
-            // Constraints
-            constraintOnRotation = serializedObject.FindProperty("constraintOnRotation");
-            constraintOnMovement = serializedObject.FindProperty("constraintOnMovement");
 
             // Smoothing
             smoothingActive = serializedObject.FindProperty("smoothingActive");
@@ -136,15 +128,6 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.Editor
                 {
                     EditorGUILayout.HelpBox("Physics options disabled. If you wish to enable physics options, add a Rigidbody component to this object.", MessageType.Info);
                 }
-            }
-
-            EditorGUILayout.Space();
-            constraintsFoldout = EditorGUILayout.Foldout(constraintsFoldout, "Constraints", true);
-
-            if (constraintsFoldout)
-            {
-                EditorGUILayout.PropertyField(constraintOnRotation);
-                EditorGUILayout.PropertyField(constraintOnMovement);
             }
 
             EditorGUILayout.Space();
